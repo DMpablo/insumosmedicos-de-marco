@@ -7,15 +7,22 @@ $size1:30px;
 body{
     background-color: $color1;
     .navBar{
-        background-color: rgb(77, 115, 172);
-        .nombre_logo{
+        background-color: $color3;
+        .nav-wrapper{
+           .nombre_logo{
             margin-left: 20px;
             font-size: $size1;
             font-weight: 200;
-            strong{
-                font-size: $size1;
-                font-weight: 600;
+                strong{
+                    font-size: $size1;
+                    font-weight: 600;
+                }
             }
+            #nav-mobile li a{
+                font-size: 20px;
+                font-weight: 200;
+            } 
         }
+        
     }
 }
