@@ -1,0 +1,34 @@
+$color1: #d8e3e7;
+$color2: #51c4d3;
+$color3: #126e82;
+$color4: #132c33;
+$size1: 30px;
+
+.navBar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: $color3;
+  padding: 2px;
+
+  .nombre_logo {
+    margin-left: 20px;
+    font-size: $size1;
+    font-weight: 200;
+    strong {
+      font-size: $size1;
+      font-weight: 600;
+    }
+  }
+  #nav-mobile {
+    font-size: 20px;
+    font-weight: 200;
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 15px;
+      height: 30px;
+    }
+  }
+}
