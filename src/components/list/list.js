@@ -1,6 +1,7 @@
-import { ProductCard } from "../product/ProductCard"
+import { ProductCard } from "../product/productCard";
 
-export const List = (props) => props.productList.map((product) => (
+export const List = (props) =>
+  props.productList.map((product) => (
     <ProductCard
       title={product.title}
       price={product.price}
@@ -8,4 +9,3 @@ export const List = (props) => props.productList.map((product) => (
       image={product.image}
     />
   ));
-

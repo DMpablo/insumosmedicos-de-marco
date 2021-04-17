@@ -1,6 +1,7 @@
 import "./app.scss";
 import { NavBar } from "./components/navBar/NavBar";
-import { List } from "./components/list/list"
+import { List } from "./components/list/list";
+import { ItemListContainer } from "./components/item-list-contenedor/itemListContainer";
 
 function App() {
   const PRODUCTOS = [
@@ -57,15 +58,18 @@ function App() {
       image: require("./img/jpg/baculas/bascula_0.jpg"),
     },
   ];
+  const GREETING = ["insumos", "medicos"];
 
   return (
-    <div className="App">
+    <div className="app">
       <NavBar />
-      <List productList={PRODUCTOS} />
-      
+      <ItemListContainer name={GREETING} />
+      <div className="container-list">
+        <div className="row">
+          <List productList={PRODUCTOS} />
+        </div>
+      </div>
     </div>
-
-
   );
 }
 export default App;
