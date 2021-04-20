@@ -1,7 +1,9 @@
 import "./productCard.scss";
+
+
 export const ProductCard = (props) => {
   return (
-    <div className="product-card col s12 xl4">
+    <div className="product-card col s12 m6 xl4">
       <div className="card">
         <div className="card-image">
           <img src={props.image} alt="imagen producto" />
