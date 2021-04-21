@@ -1,4 +1,5 @@
 import "./productCard.scss";
+import { ContainerCarrito } from "../containerCarrito/itemCount";
 
 
 export const ProductCard = (props) => {
@@ -12,9 +13,10 @@ export const ProductCard = (props) => {
           <p>{props.title}</p>
           <span className="card-title">{props.price}</span>
         </div>
-        <div className="card-action">
-          <a href="/#">see more</a>
-        </div>
+        
+         
+          <ContainerCarrito />
+     
       </div>
     </div>
   );

@@ -1,5 +1,6 @@
 import "../navBar/navbar.scss";
-import carrito from "./basket-outline.svg";
+import carrito from "../navBar/basket-outline.svg";
+
 
 export const NavBar = (props) => {
   return (
@@ -12,14 +13,22 @@ export const NavBar = (props) => {
         <li>
           <a href="/#">productos</a>
         </li>
+
         <li>
           <a href="/#">contacto</a>
         </li>
       </ul>
-      <div className="container-carrito">
-        <img className="carrito-svg" src={carrito} alt="" />
-        <p>{props.quantity}</p>
-        <img src={props.user[0].avatar} alt="img-avatar" />
+   
+
+      <div className="container-avatar">
+      <img className="carrito-svg" src={carrito} alt="svg-carrito" />
+      <p className="quantity_product"></p>
+        <p>|</p>
+        <img
+          className="img-avatar"
+          src={props.user[0].avatar}
+          alt="img-avatar"
+        />
       </div>
     </nav>
   );

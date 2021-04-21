@@ -22,23 +22,21 @@ $size1: 30px;
   }
   #nav-mobile {
     a {
-      font-size: 30px;
+      font-size: 25px;
       font-weight: 200;
     }
   }
-  .container-carrito {
+  .container-avatar {
+    .carrito-svg{
+      height: 40px;
+      margin-right: 12px;
+    }
     display: flex;
     align-items: center;
     justify-content: center;
-    img {
-
-      margin-right: 8px;
-      height: 30px;
-    }
-    p{
-      font-size: 20px;
-      font-weight: 200;
-      margin-right: 8px;
+    .img-avatar {
+      margin: 0 8px 0 12px;
+      height: 60px;
     }
   }
 }

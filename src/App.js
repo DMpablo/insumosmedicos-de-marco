@@ -1,5 +1,6 @@
 import "./app.scss";
-import { NavBar } from "./components/navBar/NavBar";
+
+import { NavBar } from "./components/navBar/NavBar.jsx";
 import { ItemListContainer } from "./components/item-list-contenedor/itemListContainer";
 import { ContainierList } from "./components/containerList/containerList";
 
@@ -79,11 +80,10 @@ function App() {
       avatar: "https://via.placeholder.com/200x200/d19292/ffffff",
     },
   ];
-  const CART = 2;
 
   return (
     <div className="app">
-      <NavBar logo={LOGO} user={USER} quantity={CART}/>
+      <NavBar logo={LOGO} user={USER} />
       <ItemListContainer name={GREETING} />
       <ContainierList productList={PRODUCTOS} />
     </div>
