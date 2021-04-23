@@ -1,7 +1,6 @@
 import "./app.scss";
-
 import { NavBar } from "./components/navBar/NavBar.jsx";
-import { ItemListContainer } from "./components/item-list-contenedor/itemListContainer";
+import { ContainerGreeting } from "./components/containerGreeting/containerGreeting";
 import { ContainierList } from "./components/containerList/containerList";
 
 function App() {
@@ -13,7 +12,7 @@ function App() {
       description:
         "La capacidad de esta máquina es de 3 a 396.8 lbs (Unidad: Kg/Lb/St). Esta máquina se utiliza para pesaje de balanzas para el peso corporal. Es de 2.2 lbs.",
       image: "https://via.placeholder.com/600x400",
-      quantity: 20,
+      stock: 5,
     },
     {
       id: 1,
@@ -23,7 +22,7 @@ function App() {
       description:
         "nuestros guantes de vinilo no contienen látex de caucho natural y están fabricados sin polvo, una solución segura para aquellos afectados por alergias comunes y sensibilidades",
       image: "https://via.placeholder.com/600x400",
-      quantity: 20,
+      stock: 5,
     },
     {
       id: 2,
@@ -33,7 +32,7 @@ function App() {
       description:
         "Protección completa: el filtro de 4 capas puede eliminar partículas no grasas en el aire, incluyendo el polvo y otras partículas no basadas en aceite. Ideal para correr, ciclismo y otras actividades al aire libre",
       image: "https://via.placeholder.com/600x400",
-      quantity: 20,
+      stock: 5,
     },
     {
       id: 3,
@@ -43,7 +42,7 @@ function App() {
       description:
         "nuestro oxímetro de pulso ha sido clínicamente probado y ha superado constantemente a otro oxímetro de pulso en términos de precisión y fiabilidad, se encuentra que es un dispositivo rápido y absolutamente fiable de usar. Es ideal para las lecturas de oxígeno y pulso, y tiene un margen de error muy pequeño.",
       image: "https://via.placeholder.com/600x400",
-      quantity: 20,
+      stock: 5,
     },
     {
       id: 4,
@@ -53,7 +52,7 @@ function App() {
       description:
         "Hermosa pantalla de retroiluminación azul, 90 juegos de memoria Operación con una sola mano. Fácil de transportar para viajar Indicador de clasificación de la presión arterial, latido cardíaco irregular desmontable Apagado automático después de 3 minutos sin funcionamiento Batería de iones de litio y cargador incluidos. Una carga completa buena para más de 100 mediciones",
       image: "https://via.placeholder.com/600x400",
-      quantity: 20,
+      stock: 5,
     },
     {
       id: 5,
@@ -63,7 +62,7 @@ function App() {
       description:
         "El termómetro no táctil obtiene el resultado en un segundo, hasta un 300% más rápido que los artículos comunes. El termómetro infrarrojo sin contacto puede detectar la temperatura de la frente desde una distancia de hasta 3.9 in. Evita eficazmente la infección cruzada entre varias personas y no molesta al bebé dormido. Sanitario y cómodo. Indicador de salud y colores de alarma permiten controlar la fiebre con hasta 10 lecturas de temperatura y recordarlas en cualquier momento. Viene con modo silencioso. Este termómetro es adecuado para todas las edades, bebés, adultos y ancianos. Soporta la detección de temperatura no sólo para las personas, sino también para la habitación y el objeto. Al mismo tiempo, es fácil cambiar entre °C y °F. Incluye 1 termómetro digital. Adecuado para empresas, escuelas, hogares, etc.",
       image: "https://via.placeholder.com/600x400",
-      quantity: 20,
+      stock: 5,
     },
   ];
   const GREETING = ["insumos", "medicos"];
@@ -84,8 +83,9 @@ function App() {
   return (
     <div className="app">
       <NavBar logo={LOGO} user={USER} />
-      <ItemListContainer name={GREETING} />
+      <ContainerGreeting name={GREETING} />
       <ContainierList productList={PRODUCTOS} />
+      
     </div>
   );
 }

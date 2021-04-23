@@ -7,5 +7,6 @@ export const List = (props) =>
       price={product.price}
       description={product.description}
       image={product.image}
+      stock={product.stock}
     />
   ));

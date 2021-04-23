@@ -1,5 +1,5 @@
-import "./itemListContainer.scss";
-export const ItemListContainer = (props) => {
+import "./containerGreeting.scss";
+export const ContainerGreeting = (props) => {
   return (
     <div className="container-greeting">
       <h1 className="insumos">

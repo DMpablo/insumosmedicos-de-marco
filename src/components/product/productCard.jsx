@@ -3,6 +3,7 @@ import { ContainerCarrito } from "../containerCarrito/itemCount";
 
 
 export const ProductCard = (props) => {
+  
   return (
     <div className="product-card col s12 m6 xl4">
       <div className="card">
@@ -13,11 +14,8 @@ export const ProductCard = (props) => {
           <p>{props.title}</p>
           <span className="card-title">{props.price}</span>
         </div>
-        
-         
-          <ContainerCarrito />
-     
-      </div>
+          <ContainerCarrito stock={props.stock} />
+        </div>
     </div>
   );
 };

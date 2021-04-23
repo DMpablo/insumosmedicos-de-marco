@@ -1,38 +1,41 @@
 import { useState, useEffect } from "react";
 import "./itemCount.scss";
 
+export const ContainerCarrito = (props) => {
+  //console.log(props.stock);
+  const [quantity, setQuantity] = useState(1);
+  const stock = props.stock;
 
-export const ContainerCarrito = () => {
-  const [contador, setContador] = useState(1);
-
-  const suma = () => {
-    setContador(contador + 1);
+  const sum = () => {
+    quantity < stock ? setQuantity(quantity + 1) : alert("no hay mas stock")
   };
 
-  const resta = () => {
-    setContador(contador - 1);
+
+  const rest = () => {
+    quantity > 0 ? setQuantity(quantity - 1) : alert("no resta mas")
   };
-  
+
   useEffect(() => {
-    if (contador <= -1) {
-      alert("ya no se puede restar");
+    if (quantity < 0) {
+      console.log("ya no se puede restar");
     }
-  }, [contador]);
+  }, [quantity]);
 
   return (
     <div className="container-carrito">
       <div className="container_add_poduct">
-        <button className="add_product btn" onClick={suma}>agregar al carrito</button>
+        <button className="add_product btn" onClick={sum}>
+          agregar al carrito
+        </button>
       </div>
 
       <div className="container_quantity">
-        
-        <a class="btn" onClick={suma}>
-          <i class="material-icons">+</i>
+        <a className="btn" onClick={sum}>
+          <i className="material-icons">+</i>
         </a>
-        <p>{contador}</p>
-        <a class="btn" onClick={resta}>
-          <i class="material-icons">-</i>
+        <p>{quantity}</p>
+        <a className="btn" onClick={rest}>
+          <i className="material-icons">-</i>
         </a>
       </div>
     </div>
