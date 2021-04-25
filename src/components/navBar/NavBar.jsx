@@ -1,7 +1,6 @@
 import "../navBar/navbar.scss";
 import carrito from "../navBar/basket-outline.svg";
 
-
 export const NavBar = (props) => {
   return (
     <nav className="navBar">
@@ -18,11 +17,11 @@ export const NavBar = (props) => {
           <a href="/#">contacto</a>
         </li>
       </ul>
-   
 
       <div className="container-avatar">
-      <img className="carrito-svg" src={carrito} alt="svg-carrito" />
-      <p className="quantity_product"></p>
+        <img className="carrito-svg" src={carrito} alt="svg-carrito" />
+        <p className="quantity_product">{props.itemsLenght}</p>
+        
         <p>|</p>
         <img
           className="img-avatar"

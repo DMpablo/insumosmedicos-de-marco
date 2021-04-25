@@ -27,13 +27,16 @@ $size1: 30px;
     }
   }
   .container-avatar {
-    .carrito-svg{
-      height: 40px;
-      margin-right: 12px;
-    }
     display: flex;
     align-items: center;
     justify-content: center;
+    .carrito-svg {
+      height: 40px;
+    }
+    .quantity_product{
+      margin: 0 12px;
+    }
+
     .img-avatar {
       margin: 0 8px 0 12px;
       height: 60px;
