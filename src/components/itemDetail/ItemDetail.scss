@@ -1,0 +1,27 @@
+.item_detail_container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 4rem;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+  img {
+    height: 40%;
+  }
+  .item_detail {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 40%;
+    @media screen and (max-width: 768px) {
+        width: 100%; 
+      }
+    .title_detail {
+      font-size: 20px;
+    }
+    .price_detail {
+      font-size: 30px;
+    }
+  }
+}

@@ -1,11 +1,12 @@
 import "./app.scss";
 import React from "react";
+
 import { NavBar } from "./components/navBar/NavBar.jsx";
-import { ContainerGreeting } from "./components/containerGreeting/containerGreeting";
-import { ItemListContainer } from "./components/itemListContainer/itemListContainier";
+import { ItemListContainer } from "./pages/itemListContainier";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ItemDetailContainer } from "./pages/itemDetailContainer";
 
 function App() {
-  const GREETING = ["insumos", "medicos"];
   const LOGO = ["i", "m"];
   const USER = [
     {
@@ -19,14 +20,21 @@ function App() {
       avatar: "https://via.placeholder.com/200x200/d19292/ffffff",
     },
   ];
-  const [itemsLenght, setItemsLenght] = React.useState(0);
 
   return (
-    <div className="app">
-      <NavBar logo={LOGO} user={USER} itemsLenght={itemsLenght} />
-      <ContainerGreeting name={GREETING} />
-      <ItemListContainer setItemsLenght={setItemsLenght} />
-    </div>
+    <BrowserRouter>
+      <NavBar logo={LOGO} user={USER} />
+
+      <Switch>
+        <Route
+          path="/itemDetailContainer/:id"
+          component={ItemDetailContainer}
+        />
+        <Route path="/category">in coming</Route>
+        <Route path="/contact">in coming</Route>
+        <Route exact path="/" component={ItemListContainer} />
+      </Switch>
+    </BrowserRouter>
   );
 }
 export default App;

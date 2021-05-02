@@ -2,28 +2,34 @@ $color1: #d8e3e7;
 $color2: #51c4d3;
 $color3: #126e82;
 $color4: #132c33;
-$size1: 30px;
+$size1: 1rem;
 
 .navBar {
   display: flex;
   align-items: center;
   justify-content: space-between;
   background-color: $color3;
+  width: 100%;
   padding: 2px;
 
   .nombre_logo {
-    margin-left: 40px;
+    margin-left: 2%;
     font-size: $size1;
     font-weight: 200;
+    width: 20%;
     strong {
       font-size: $size1;
       font-weight: 600;
     }
   }
   #nav-mobile {
-    a {
-      font-size: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      font-size: 2rem;
       font-weight: 200;
+      
     }
   }
   .container-avatar {
@@ -31,7 +37,7 @@ $size1: 30px;
     align-items: center;
     justify-content: center;
     .carrito-svg {
-      height: 40px;
+      height: 2rem;
     }
     .quantity_product{
       margin: 0 12px;

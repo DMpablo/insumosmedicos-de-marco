@@ -1,26 +1,22 @@
 import "./item.scss";
-import { FunctioButtons } from "../functioButtons/functioButtons";
+import { Link } from "react-router-dom";
+import { ButtonSeeMore } from "../ButtonSeeMore/ButtonSeeMore";
 
-export const Item = (props) => {
+export const Item = ({ id, picture, title, price }) => {
   return (
     <div className="product-card col s12 m6 xl4">
       <div className="card">
         <div className="card-image">
-          <h4>Info</h4>
-          <p>{props.address.street}</p>
-          <p>{props.address.suite}</p>
-          <p>{props.address.city}</p>
-          <p>{props.address.zipcode}</p>
-          {/*  <img src={props.image} alt="imagen producto" /> */}
+          <img src={picture} alt="imagen producto" />
         </div>
         <div className="card-content">
-          <span className="card-title">{props.username}</span>
-          <p>{props.name}</p>
+          <span className="card-title">{title}</span>
+          <p>{price.amount}</p>
+          <p>{id}</p>
         </div>
-          <FunctioButtons
-            stock={props.stock}
-            setItemsLenght={props.setItemsLenght}
-          />
+        <Link to={`/itemDetailContainer/:${id}`}>
+          <ButtonSeeMore />
+        </Link>
       </div>
     </div>
   );

@@ -2,8 +2,44 @@ import { Item } from "../item/item";
 import React from "react";
 import "./itemList.scss";
 
-export const ItemList = ({ setItemsLenght }) => {
-  /*  const PRODUCTOS = [
+export const ItemList = () => {
+
+  const [Items, setProducts] = React.useState([]);
+
+  React.useEffect(() => {
+    const obtenerDatos = async () => {
+      const response = await fetch(
+        "http://challenge-meli-backend.herokuapp.com/api/items?q=barbijo"
+      );
+      const products = await response.json();
+      setProducts(products.items);
+    };
+    obtenerDatos();
+  }, []);
+  return (
+    <div className="item_list">
+      <h4 className="sub_title">Practicado APIs</h4>
+      {
+        Items ? (
+        Items.map((product) => (
+          <Item
+            id={product.id}
+            picture={product.picture}
+            price={product.price}
+            title={product.title}
+            thumbnail={product.thumbnail}
+           
+           
+          />
+      ))) : (
+        <p>Cargando datos...</p>
+        )
+      }
+    </div>
+  );
+};
+
+/*  const PRODUCTOS = [
     {
       id: 0,
       title: "Bascula corporal Escali",
@@ -11,7 +47,7 @@ export const ItemList = ({ setItemsLenght }) => {
       description:
         "La capacidad de esta máquina es de 3 a 396.8 lbs (Unidad: Kg/Lb/St). Esta máquina se utiliza para pesaje de balanzas para el peso corporal. Es de 2.2 lbs.",
       image: "https://via.placeholder.com/600x400",
-      stock: 5,
+      stock: 5
     },
     {
       id: 1,
@@ -21,7 +57,7 @@ export const ItemList = ({ setItemsLenght }) => {
       description:
         "nuestros guantes de vinilo no contienen látex de caucho natural y están fabricados sin polvo, una solución segura para aquellos afectados por alergias comunes y sensibilidades",
       image: "https://via.placeholder.com/600x400",
-      stock: 5,
+      stock: 5
     },
     {
       id: 2,
@@ -31,7 +67,7 @@ export const ItemList = ({ setItemsLenght }) => {
       description:
         "Protección completa: el filtro de 4 capas puede eliminar partículas no grasas en el aire, incluyendo el polvo y otras partículas no basadas en aceite. Ideal para correr, ciclismo y otras actividades al aire libre",
       image: "https://via.placeholder.com/600x400",
-      stock: 5,
+      stock: 5
     },
     {
       id: 3,
@@ -41,7 +77,7 @@ export const ItemList = ({ setItemsLenght }) => {
       description:
         "nuestro oxímetro de pulso ha sido clínicamente probado y ha superado constantemente a otro oxímetro de pulso en términos de precisión y fiabilidad, se encuentra que es un dispositivo rápido y absolutamente fiable de usar. Es ideal para las lecturas de oxígeno y pulso, y tiene un margen de error muy pequeño.",
       image: "https://via.placeholder.com/600x400",
-      stock: 5,
+      stock: 5
     },
     {
       id: 4,
@@ -51,7 +87,7 @@ export const ItemList = ({ setItemsLenght }) => {
       description:
         "Hermosa pantalla de retroiluminación azul, 90 juegos de memoria Operación con una sola mano. Fácil de transportar para viajar Indicador de clasificación de la presión arterial, latido cardíaco irregular desmontable Apagado automático después de 3 minutos sin funcionamiento Batería de iones de litio y cargador incluidos. Una carga completa buena para más de 100 mediciones",
       image: "https://via.placeholder.com/600x400",
-      stock: 5,
+      stock: 5
     },
     {
       id: 5,
@@ -61,39 +97,6 @@ export const ItemList = ({ setItemsLenght }) => {
       description:
         "El termómetro no táctil obtiene el resultado en un segundo, hasta un 300% más rápido que los artículos comunes. El termómetro infrarrojo sin contacto puede detectar la temperatura de la frente desde una distancia de hasta 3.9 in. Evita eficazmente la infección cruzada entre varias personas y no molesta al bebé dormido. Sanitario y cómodo. Indicador de salud y colores de alarma permiten controlar la fiebre con hasta 10 lecturas de temperatura y recordarlas en cualquier momento. Viene con modo silencioso. Este termómetro es adecuado para todas las edades, bebés, adultos y ancianos. Soporta la detección de temperatura no sólo para las personas, sino también para la habitación y el objeto. Al mismo tiempo, es fácil cambiar entre °C y °F. Incluye 1 termómetro digital. Adecuado para empresas, escuelas, hogares, etc.",
       image: "https://via.placeholder.com/600x400",
-      stock: 5,
-    },
+      stock: 5
+    }
   ]; */
-
-  const [equipo, setEquipo] = React.useState([]);
-
-  React.useEffect(() => {
-    obtenerDatos();
-  }, []);
-
-  const obtenerDatos = async () => {
-    const data = await fetch("https://jsonplaceholder.typicode.com/users");
-    const users = await data.json();
-    setEquipo(users);
-  };
-
-  return (
-    <div className="item_list">
-      <h4 className="sub_title">practicado APIs</h4>
-
-      {equipo.map((product) => (
-        <Item
-          address={product.address}
-          name={product.name}
-          username={product.username}
-          website={product.website}
-          stock={product.stock}
-
-          setItemsLenght={setItemsLenght}
-        />
-      ))}
-    </div>
-  );
-};
-
-

@@ -1,23 +1,16 @@
-import "./buttonChangeQuantity.scss"
-import { ButtonAddToCard } from "../buttonAddToCard/buttonAddToCard";
+import "./buttonChangeQuantity.scss";
 
-
-export const ButtonChangeQuantity = ({sum, quantity, rest}) => {
+export const ButtonChangeQuantity = ({ sum, quantity, rest }) => {
   return (
     <div className="container-carrito">
-    
-      <ButtonAddToCard sum={sum}/>
-
-      {/* <div className="container_quantity">
-        <a className="btn" onClick={sum}>
-          <i className="material-icons">+</i>
-        </a>
-        <p>{quantity}</p>
-        <a className="btn" onClick={rest}>
-          <i className="material-icons">-</i>
-        </a>
-      </div> */}
-
+      <button className="btn" onClick={sum}>
+        +
+      </button>
+      <input className='w-25' type="number" placeholder={quantity} />
+      <button className="btn" onClick={rest}>
+        -
+      </button>
+      <button className="btn btn_add">Agregar </button>
     </div>
   );
 };
