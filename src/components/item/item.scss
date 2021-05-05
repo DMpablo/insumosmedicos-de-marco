@@ -1,9 +1,44 @@
-.card{
-    padding: 2rem;
-}
-.card-image{
+$color1: #d8e3e7;
+$color2: #51c4d3;
+$color3: #126e82;
+$color4: #132c33;
+$size1: 1rem;
+
+.product-card {
+  margin: 4rem;
+   
+  .card {
+    border-radius: 8px;
     display: flex;
-    p {
-        margin: 0 1rem;
+    align-items: center;
+    justify-content: center;
+   
+    @media screen and (max-width: 768px) {
+      display: block;
     }
+
+    .card-image {
+      img {
+        height: 10rem;
+        width: 10rem;
+        @media screen and (max-width: 768px) {
+          height: 80%;
+          width: 80%;
+        }
+      }
+    }
+    .card-content {
+      width: 40%;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+
+      p {
+        margin: 0 1rem;
+      }
+    }
+    button {
+      width: 100%;
+    }
+  }
 }

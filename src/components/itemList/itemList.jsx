@@ -1,15 +1,16 @@
 import { Item } from "../item/item";
 import React from "react";
 import "./itemList.scss";
+import { useParams } from "react-router";
 
 export const ItemList = () => {
-
   const [Items, setProducts] = React.useState([]);
+  const { catName } = useParams();
 
   React.useEffect(() => {
     const obtenerDatos = async () => {
       const response = await fetch(
-        "http://challenge-meli-backend.herokuapp.com/api/items?q=barbijo"
+        `http://challenge-meli-backend.herokuapp.com/api/items?q=${catName}`
       );
       const products = await response.json();
       setProducts(products.items);
@@ -18,23 +19,20 @@ export const ItemList = () => {
   }, []);
   return (
     <div className="item_list">
-      <h4 className="sub_title">Practicado APIs</h4>
-      {
-        Items ? (
+      <h4 className="sub_title">{catName}</h4>
+      {Items ? (
         Items.map((product) => (
           <Item
+            catName={catName}
             id={product.id}
             picture={product.picture}
             price={product.price}
             title={product.title}
-            thumbnail={product.thumbnail}
-           
-           
           />
-      ))) : (
+        ))
+      ) : (
         <p>Cargando datos...</p>
-        )
-      }
+      )}
     </div>
   );
 };

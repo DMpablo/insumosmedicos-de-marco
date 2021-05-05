@@ -4,28 +4,25 @@ import { ItemDetail } from "../components/itemDetail/ItemDetail";
 
 export const ItemDetailContainer = () => {
   const { id } = useParams();
-  const [Items, setItems] = React.useState([]);
+  const { catName } = useParams();
+  const [ItemID, setItemID] = React.useState([]);
 
   React.useEffect(() => {
     const obtenerDatos = async () => {
       const response = await fetch(
-        "http://challenge-meli-backend.herokuapp.com/api/items?q=barbijo"
+        `http://challenge-meli-backend.herokuapp.com/api/items?q=${catName}`
       );
       const products = await response.json();
       const itemId = products.items.find((i) => (i.id = { id }));
-      setItems(itemId);
+      setItemID(itemId);
     };
     obtenerDatos();
   }, [id]);
-console.log(Items);
+  console.log(ItemID.id);
+
   return (
-    <div >
-      <ItemDetail
-        title={Items.title}
-        id={Items.id}
-        picture={Items.picture}
-       
-      />
+    <div>
+      {ItemID ? <ItemDetail ItemID={ItemID} /> : <p>Cargando datos...</p>}
     </div>
   );
 };

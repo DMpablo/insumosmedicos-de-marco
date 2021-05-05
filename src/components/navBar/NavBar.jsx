@@ -5,13 +5,19 @@ import carrito from "../navBar/basket-outline.svg";
 export const NavBar = (props) => {
   return (
     <nav className="navBar">
-    <Link className="nombre_logo"  to="/">{props.logo[0]}
-        <strong> {props.logo[1]}</strong> </Link>
-  
+      <Link className="nombre_logo" to="/">
+        {props.logo[0]}
+        <strong> {props.logo[1]}</strong>{" "}
+      </Link>
+
       <ul id="nav-mobile" className="right">
-        <li><Link to="/category">categorias</Link></li>
+        <li>
+          <Link to="/category">productos</Link>
+        </li>
         <p>|</p>
-        <li><Link to="/contact">contacto</Link></li>
+        <li>
+          <Link to="/contact">contacto</Link>
+        </li>
       </ul>
 
       <div className="container-avatar">
