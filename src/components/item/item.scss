@@ -6,19 +6,21 @@ $size1: 1rem;
 
 .product-card {
   margin: 4rem;
-   
+
   .card {
     border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-   
+
     @media screen and (max-width: 768px) {
       display: block;
     }
 
     .card-image {
       img {
+        border-radius: 4px;
+        
         height: 10rem;
         width: 10rem;
         @media screen and (max-width: 768px) {

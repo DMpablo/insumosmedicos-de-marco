@@ -1,6 +1,3 @@
-import "./app.scss";
-import React from "react";
-
 import { NavBar } from "./components/navBar/NavBar.jsx";
 import { ItemListContainer } from "./pages/itemListContainier";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
@@ -8,10 +5,14 @@ import { ItemDetailContainer } from "./pages/itemDetailContainer";
 import Footer from "./components/Footer/Footer";
 import CategoryContainer from "./pages/CategoryContainer";
 import { ItemList } from "./components/itemList/itemList";
+import { useContext } from "react";
+import { CartContext } from "./context/cartContext";
+import "./app.scss";
+import Cart from "./pages/cart/Cart.jsx";
 
 function App() {
-  const LOGO = ["i", "m"];
-  const USER = [
+  const logo = ["i", "m"];
+  const user = [
     {
       admin: "si",
       name: "Pepe",
@@ -23,10 +24,11 @@ function App() {
       avatar: "https://via.placeholder.com/200x200/d19292/ffffff",
     },
   ];
-
+  const { quantity } = useContext(CartContext);
+  
   return (
     <BrowserRouter>
-      <NavBar logo={LOGO} user={USER} />
+      <NavBar logo={logo} user={user} quantity={quantity} />
       <Switch>
         <Route
           path="/itemDetailContainer/:catName/:id"
@@ -35,6 +37,7 @@ function App() {
         <Route path="/category/:catName">
           <ItemList />
         </Route>
+        <Route path='/cart' component={Cart}/>
         <Route path="/category">
           <CategoryContainer />
         </Route>

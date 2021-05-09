@@ -12,8 +12,8 @@ export const ButtonChangeQuantity = ({ sum, quantity, rest }) => {
           -
         </button>
       </div>
-
-      <button className="btn btn_add">Agregar </button>
+      
+     
     </div>
   );
 };

@@ -1,13 +1,13 @@
 import "../navBar/navbar.scss";
 import { Link } from "react-router-dom";
 import carrito from "../navBar/basket-outline.svg";
-
-export const NavBar = (props) => {
+import { ItemCount } from "../ItemCount/ItemCount";
+export const NavBar = ({ logo, user, quantity }) => {
   return (
     <nav className="navBar">
       <Link className="nombre_logo" to="/">
-        {props.logo[0]}
-        <strong> {props.logo[1]}</strong>{" "}
+        {logo[0]}
+        <strong> {logo[1]}</strong>{" "}
       </Link>
 
       <ul id="nav-mobile" className="right">
@@ -22,14 +22,13 @@ export const NavBar = (props) => {
 
       <div className="container-avatar">
         <img className="carrito-svg" src={carrito} alt="svg-carrito" />
-        <p className="quantity_product">0</p>
+        <Link to="/cart">
+        <ItemCount quantity={quantity}/>
+         
+        </Link>
 
         <p>|</p>
-        <img
-          className="img-avatar"
-          src={props.user[0].avatar}
-          alt="img-avatar"
-        />
+        <img className="img-avatar" src={user[0].avatar} alt="img-avatar" />
       </div>
     </nav>
   );
