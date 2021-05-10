@@ -5,7 +5,6 @@ import { CartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ ItemID, onAdd }) => {
   const { cart } = useContext(CartContext);
-  const cartId = cart.find((e) => e.id === ItemID.id);
 
   return (
     <div className="item_detail_container">
@@ -14,7 +13,7 @@ export const ItemDetail = ({ ItemID, onAdd }) => {
         <p className="title_detail">{ItemID.title}</p>
         <p className="price_detail">{ItemID?.price?.amount}</p>
         <div className="function_buttons">
-          {cartId ? (
+          {cart.find((e) => e.id === ItemID.id) ? (
             <Link to="/cart">
               <button className="btn btn_add">ver en carrito</button>
             </Link>

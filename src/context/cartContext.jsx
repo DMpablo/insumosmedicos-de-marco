@@ -15,11 +15,14 @@ export const CartProvider = ({children}) =>{
         const newCart = cart.filter(item => item.id !== itemId)
         setCart(newCart)
     }
+    const clearCart = () =>{
+        setCart([])
+    }
         
     useEffect(()=>{
         setQuantity(cart.length)
     },[cart])
     
 
-    return <CartContext.Provider value={{cart, addToCart, removeFromCart, quantity}}>{children}</CartContext.Provider>
+    return <CartContext.Provider value={{cart, addToCart, removeFromCart, quantity, clearCart}}>{children}</CartContext.Provider>
 }

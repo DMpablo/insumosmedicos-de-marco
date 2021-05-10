@@ -3,19 +3,23 @@
   align-items: center;
   justify-content: center;
   margin: 4rem;
-  @media screen and (max-width: 768px) {
+  @media screen and (max-width: 535px) {
     display: block;
   }
   img {
     border-radius: 4px;
+    height: 30rem;
     object-fit:cover;
+    @media screen and (max-width: 768px) {
+      height: 20rem;
+    }
     }
   .item_detail {
     display: block;
     align-items: center;
     justify-content: center;
     width: 40%;
-    @media screen and (max-width: 768px) {
+    @media screen and (max-width: 425px) {
       width: 100%;
     }
     .title_detail {
