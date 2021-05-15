@@ -3,7 +3,10 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import CartDetail from "../../components/cartDetail/CartDetail";
 const Cart = () => {
-  const { cart, clearCart } = useContext(CartContext);
+  const { cart, clearCart, cartTotal } = useContext(CartContext);
+
+ console.log(cartTotal);
+
 
   return (
     <div className="container_if_else">
@@ -26,13 +29,15 @@ const Cart = () => {
             <button className="btn" onClick={clearCart}>
               vaciar carrito ❎
             </button>
+            <p>Total {cartTotal}</p>
             <button className="btn">Finalizar la compra 👌</button>
           </div>
         </div>
       ) : (
         <div className="cart_container_else">
           <p>
-            <strong>Carrito vacio!</strong><br />
+            <strong>Carrito vacio!</strong>
+            <br />
             Cuando agregues algo va a estar en este sitio 🛒
           </p>
         </div>

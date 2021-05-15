@@ -1,17 +1,17 @@
-import { NavBar } from "./components/navBar/NavBar.jsx";
-import { ItemListContainer } from "./pages/itemListContainier";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { ItemDetailContainer } from "./pages/itemDetailContainer";
-import Footer from "./components/Footer/Footer";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { ItemListContainer } from "./pages/itemListContainier";
 import CategoryContainer from "./pages/CategoryContainer";
 import { ItemList } from "./components/itemList/itemList";
-import { useContext } from "react";
+import { NavBar } from "./components/navBar/NavBar.jsx";
 import { CartContext } from "./context/cartContext";
-import "./app.scss";
+import Footer from "./components/Footer/Footer";
 import Cart from "./pages/cart/Cart.jsx";
+import { useContext } from "react";
+import "./app.scss";
 
 function App() {
-  const logo = ["i", "m"];
+  
   const user = [
     {
       admin: "si",
@@ -28,7 +28,7 @@ function App() {
   
   return (
     <BrowserRouter>
-      <NavBar logo={logo} user={user} quantity={quantity} />
+      <NavBar user={user} quantity={quantity} />
       <Switch>
         <Route
           path="/itemDetailContainer/:catName/:id"

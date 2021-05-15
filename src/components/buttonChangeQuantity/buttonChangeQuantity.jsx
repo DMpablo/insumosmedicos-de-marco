@@ -2,17 +2,19 @@ import "./buttonChangeQuantity.scss";
 import React, { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 
-export const ButtonChangeQuantity = ({ sum, quantity, rest, item }) => {
-  const { removeFromCart } = useContext(CartContext);
+export const ButtonChangeQuantity = ({ item }) => {
+  const { removeFromCart, cart } = useContext(CartContext);
+
+  console.log(cart);
+
 
   return (
     <div className="container-carrito">
       <div className='container_button_change'>
-        <button className="btn" onClick={sum}>
+        <button className="btn">
           +
         </button>
-        <input className="w-25" type="number" placeholder={quantity} />
-        <button className="btn" onClick={rest}>
+         <button className="btn" >
           -
         </button>
         <button className="btn" onClick={() => removeFromCart(item.id)}>
