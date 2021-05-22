@@ -10,7 +10,7 @@ export const ItemListContainer = () => {
         <ContainerGreeting name={GREETING} />
       </div>
       <div className="row">
-        <CategoryContainer />
+        <CategoryContainer path="/category"/>
       </div>
     </div>
   );

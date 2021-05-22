@@ -2,7 +2,7 @@ import "../navBar/navbar.scss";
 import { Link } from "react-router-dom";
 import carrito from "../navBar/basket-outline.svg";
 import { ItemCount } from "../ItemCount/ItemCount";
-export const NavBar = ({ user, quantity }) => {
+export const NavBar = ({ quantity }) => {
   return (
     <nav className="navBar">
       <Link className="nombre_logo" to="/">
@@ -10,7 +10,7 @@ export const NavBar = ({ user, quantity }) => {
       </Link>
 
       <ul id="nav-mobile" className="right">
-        <li>
+        <li key={'index'}>
           <Link to="/category">productos</Link>
         </li>
         <p>|</p>
@@ -26,7 +26,11 @@ export const NavBar = ({ user, quantity }) => {
         </Link>
 
         <p>|</p>
-        <img className="img-avatar" src={user[0].avatar} alt="img-avatar" />
+        <img
+          className="img-avatar"
+          src="https://via.placeholder.com/200x200/92d19a/ffffff"
+          alt="img-avatar"
+        />
       </div>
     </nav>
   );

@@ -5,13 +5,13 @@ import { CartContext } from "../../context/cartContext";
 
 export const ItemDetail = ({ ItemID, onAdd }) => {
   const { cart } = useContext(CartContext);
-
   return (
     <div className="item_detail_container">
-      <img src={ItemID.picture} alt={ItemID.title} />
+      <img src={ItemID.imageId} alt={ItemID.title} />
       <div className="item_detail">
         <p className="title_detail">{ItemID.title}</p>
-        <p className="price_detail">{ItemID?.price?.amount}</p>
+        <p className="title_detail">{ItemID.description}</p>
+        <p className="price_detail">{ItemID.price}</p>
         <div className="function_buttons">
           {cart.find((e) => e.id === ItemID.id) ? (
             <Link to="/cart">

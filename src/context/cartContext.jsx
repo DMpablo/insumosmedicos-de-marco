@@ -19,7 +19,8 @@ export const CartProvider = ({ children }) => {
   };
 
   let cartTotal = 0;
-  const sumTotal = cart.map((e) => (cartTotal += Number(e.price.amount)));
+  const newCartTotal = cart.map((e) => (cartTotal += Number(e.price)))
+  
 
   useEffect(() => {
     setQuantity(cart.length);

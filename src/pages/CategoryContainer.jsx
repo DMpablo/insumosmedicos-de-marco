@@ -1,21 +1,20 @@
-import React from "react";
-import './CategoryContainer.scss'
+import "./CategoryContainer.scss";
 import { Link } from "react-router-dom";
 
-const CategoryContainer = () => {
-  const category = [
-    { catName: "barbijo" },
-    { catName: "ropa medica" },
-    { catName: "kit odontologico" },
-  ];
-
+const CategoryContainer = ({ itemsFirebase }) => {
   return (
-    <div className='category_container'>
-      {category.map((i) => (
-        <Link to={`/category/${i.catName}`}>
-          <button className="btn">{i.catName}</button>
-        </Link>
-      ))}
+    <div className="item_list">
+      {itemsFirebase === undefined ? (
+        <p> Esperando datos del servidor ⌛</p>
+      ) : (
+        <div  className="category_container">
+          {itemsFirebase.map((i) => (
+            <Link key={"index"} to={`/category/${i.category}`}>
+              <button className="btn">{i.category}</button>
+            </Link>
+          ))}
+        </div>
+      )}
     </div>
   );
 };

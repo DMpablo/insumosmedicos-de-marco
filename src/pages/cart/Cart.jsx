@@ -4,12 +4,9 @@ import { CartContext } from "../../context/cartContext";
 import CartDetail from "../../components/cartDetail/CartDetail";
 const Cart = () => {
   const { cart, clearCart, cartTotal } = useContext(CartContext);
-
- console.log(cartTotal);
-
-
+  console.log(cartTotal);
   return (
-    <div className="container_if_else">
+    <div key={'index'} className="container_if_else">
       {cart.length > 0 ? (
         <div className="cart_container_if">
           <div className="title">
@@ -19,8 +16,8 @@ const Cart = () => {
             <div className="cart_detail_container">
               <CartDetail
                 title={e.title}
-                picture={e.picture}
-                price={e.price.amount}
+                imageId={e.imageId}
+                price={e.price}
                 item={e}
               />
             </div>
