@@ -3,26 +3,22 @@ import React, { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 
 export const ButtonChangeQuantity = ({ item }) => {
-  const { removeFromCart, cart } = useContext(CartContext);
-
-  console.log(cart);
-
-
+  const { removeFromCart, restUnit, addUnit } = useContext(CartContext);
+ 
   return (
     <div className="container-carrito">
-      <div className='container_button_change'>
-        <button className="btn">
+      <div className="container_button_change">
+        <button className="btn" onClick={() => addUnit(item)}>
           +
         </button>
-         <button className="btn" >
-          -
+        <p>{item.units}</p>
+        <button className="btn" onClick={()=> restUnit(item)}>
+        -
         </button>
         <button className="btn" onClick={() => removeFromCart(item.id)}>
-        ❌
-      </button>
+          ❌
+        </button>
       </div>
-      
-     
     </div>
   );
 };

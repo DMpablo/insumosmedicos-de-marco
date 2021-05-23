@@ -10,17 +10,35 @@ export const CartProvider = ({ children }) => {
     setCart([...cart, item]);
   };
 
-  const removeFromCart = (itemId) => {
-    const newCart = cart.filter((item) => item.id !== itemId);
+  const addUnit = (item) => {
+    const newCart = [...cart];
+    newCart[newCart.findIndex((prod) => prod.id === item.id)].units += 1;
     setCart(newCart);
   };
+
+  const restUnit = (item) => {
+    const newCart = [...cart];
+    let indexItem = cart.findIndex((e) => e.id === item.id);
+    if (newCart[indexItem].units === 1) {
+      console.log("no hace nada");
+    } else {
+      newCart[newCart.findIndex((prod) => prod.id === item.id)].units -= 1;
+    }
+    setCart(newCart);
+  };
+  const removeFromCart = (itemId) => {
+    const newCart = cart.filter((e) => e.id !== itemId);
+    setCart(newCart);
+  };
+
   const clearCart = () => {
     setCart([]);
   };
 
   let cartTotal = 0;
-  const newCartTotal = cart.map((e) => (cartTotal += Number(e.price)))
-  
+  const newCartTotal = cart.map(
+    (e) => (cartTotal += Number(e.price * e.units))
+  );
 
   useEffect(() => {
     setQuantity(cart.length);
@@ -35,6 +53,8 @@ export const CartProvider = ({ children }) => {
         quantity,
         clearCart,
         cartTotal,
+        addUnit,
+        restUnit,
       }}
     >
       {children}

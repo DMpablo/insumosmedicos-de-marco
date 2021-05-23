@@ -4,16 +4,16 @@ import { CartContext } from "../../context/cartContext";
 import CartDetail from "../../components/cartDetail/CartDetail";
 const Cart = () => {
   const { cart, clearCart, cartTotal } = useContext(CartContext);
-  console.log(cartTotal);
+ 
   return (
-    <div key={'index'} className="container_if_else">
+    <div className="container_if_else">
       {cart.length > 0 ? (
         <div className="cart_container_if">
           <div className="title">
             <h5>Descripcion del carrito 🛒</h5>
           </div>
-          {cart.map((e) => (
-            <div className="cart_detail_container">
+          {cart.map((e, index) => (
+            <div  key={index} className="cart_detail_container">
               <CartDetail
                 title={e.title}
                 imageId={e.imageId}

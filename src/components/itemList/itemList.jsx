@@ -8,11 +8,11 @@ export const ItemList = ({ itemsFirebase }) => {
   const newCat = itemsFirebase.filter((i) => i.category === catName);
 
   return (
-    <div key={"index"} className="item_list">
+    <div  className="item_list">
       {newCat === undefined ? (
         <p>Cargando datos</p>
       ) : (
-        newCat.map((e) => <Item newCat={e} />)
+        newCat.map((e, index) => <Item key={index} newCat={e} />)
       )}
     </div>
   );
