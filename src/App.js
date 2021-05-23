@@ -45,16 +45,17 @@ function App() {
       <NavBar quantity={quantity} />
       <Switch>
         <Route path="/itemDetailContainer/:catName/:id">
-        <CategoryContainer itemsFirebase={itemsFirebase} />
+          <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemDetailContainer itemsFirebase={itemsFirebase} />
         </Route>
         <Route path="/category/:catName">
-        <CategoryContainer itemsFirebase={itemsFirebase} />
+          <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemList itemsFirebase={itemsFirebase} />
         </Route>
         <Route path="/cart" component={Cart} />
         <Route path="/category">
           <CategoryContainer itemsFirebase={itemsFirebase} />
+          <h3>Elegi una categoria!🔍</h3>
         </Route>
 
         <Route path="/contact" component={Footer} />
