@@ -12,8 +12,12 @@ export const CartProvider = ({ children }) => {
 
   const addUnit = (item) => {
     const newCart = [...cart];
-    newCart[newCart.findIndex((prod) => prod.id === item.id)].units += 1;
-    setCart(newCart);
+    if (item.stock > item.units) {
+      newCart[newCart.findIndex((prod) => prod.id === item.id)].units += 1;
+      setCart(newCart);
+    }else{
+      alert(`No tenemos mas cantidad de ${item.title}, stock actual es: ${item.stock}`)
+    }
   };
 
   const restUnit = (item) => {

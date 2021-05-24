@@ -2,9 +2,22 @@ import "./Cart.scss";
 import React, { useContext } from "react";
 import { CartContext } from "../../context/cartContext";
 import CartDetail from "../../components/cartDetail/CartDetail";
+import { getFirestore } from "../../firebase";
 const Cart = () => {
   const { cart, clearCart, cartTotal } = useContext(CartContext);
- 
+
+  const handleFinsh = () => {
+    const db = getFirestore();
+    const batch = db.batch();
+
+    cart.forEach((item) => {
+      const itemRef = db.collection("items").doc(item.id);
+      batch.update(itemRef, { stock: item.stock - item.units });
+      alert(`Gracias por tu compra!!`);
+      clearCart();
+    });
+  };
+
   return (
     <div className="container_if_else">
       {cart.length > 0 ? (
@@ -13,12 +26,13 @@ const Cart = () => {
             <h5>Descripcion del carrito 🛒</h5>
           </div>
           {cart.map((e, index) => (
-            <div  key={index} className="cart_detail_container">
+            <div key={index} className="cart_detail_container">
               <CartDetail
                 title={e.title}
                 imageId={e.imageId}
                 price={e.price}
                 item={e}
+                stock={e.stock}
               />
             </div>
           ))}
@@ -27,7 +41,9 @@ const Cart = () => {
               vaciar carrito ❎
             </button>
             <p>Total {cartTotal}</p>
-            <button className="btn">Finalizar la compra 👌</button>
+            <button className="btn" onClick={handleFinsh}>
+              Finalizar la compra 👌
+            </button>
           </div>
         </div>
       ) : (
