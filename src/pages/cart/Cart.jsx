@@ -35,9 +35,9 @@ const Cart = () => {
       .catch((error) => error);
     alert(
       `Gracias por tu compra!! 
-      descripcion de tu compra: ${infoCart[0].title}, ${infoCart[0].quantity}, ${infoCart[0].price}, 
-      y el total es: ${cartTotal} `
+      descripcion de tu compra: ${infoCart[0].title}, ${infoCart[0].quantity}, ${infoCart[0].price}, y el total es: ${cartTotal} `
     );
+    console.log(orderId);
     clearCart();
   };
 
