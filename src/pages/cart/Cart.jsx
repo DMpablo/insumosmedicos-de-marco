@@ -35,7 +35,7 @@ const Cart = () => {
       .catch((error) => error);
     alert(
       `Gracias por tu compra!! 
-      descripcion de tu compra: ${infoCart[0].title}, ${infoCart[0].quantity}, ${infoCart[0].price}, y el total es: ${cartTotal} `
+      descripcion de tu compra: ${infoCart[0].title}, cantidad: ${infoCart[0].quantity}, ${infoCart[0].price}, total: ${cartTotal} `
     );
     console.log(orderId);
     clearCart();
@@ -55,8 +55,8 @@ const Cart = () => {
     <div className="container_if_else">
       {cart.length > 0 ? (
         <div className="cart_container_if">
-          <div className="title">
-            <h5>Descripcion del carrito 🛒</h5>
+          <div >
+            <h5 className="title">Descripcion del carrito 🛒</h5>
           </div>
           {cart.map((e, index) => (
             <div key={index} className="cart_detail_container">
@@ -76,7 +76,7 @@ const Cart = () => {
             </button>
           </div>
           <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
-          <button className="btn" onClick={handleFinsh}>
+          <button className="btn buy_finish" onClick={handleFinsh}>
             Finalizar la compra 👌
           </button>
         </div>

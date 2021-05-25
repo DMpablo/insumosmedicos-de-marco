@@ -10,12 +10,14 @@ const CategoryContainer = ({ itemsFirebase }) => {
   return (
     <div className="item_list">
       {itemsFirebase === undefined ? (
-        <p> Esperando datos del servidor ⌛</p>
+        <div className="progress">
+          <div className="indeterminate"></div>
+        </div>
       ) : (
         <div className="category_container">
           {categoryFilt.map((i, index) => (
             <Link key={index} to={`/category/${i}`}>
-              <button className="btn">{i}</button>
+              <button className="btn-flat button">{i}</button>
             </Link>
           ))}
         </div>

@@ -54,6 +54,7 @@ function App() {
         </Route>
         <Route path="/cart" component={Cart} />
         <Route path="/category">
+        
           <CategoryContainer itemsFirebase={itemsFirebase} />
           <h3>Elegi una categoria!🔍</h3>
         </Route>

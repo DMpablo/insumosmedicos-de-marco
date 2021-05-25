@@ -26,11 +26,11 @@ export const NavBar = ({ quantity }) => {
         </Link>
 
         <p>|</p>
-        <img
+  {/*       <img
           className="img-avatar"
           src="https://via.placeholder.com/200x200/92d19a/ffffff"
           alt="img-avatar"
-        />
+        /> */}
       </div>
     </nav>
   );

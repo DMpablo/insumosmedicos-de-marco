@@ -3,13 +3,14 @@
   align-items: center;
   justify-content: center;
   .cart_container_if {
-    width: 100%;
+    width: 80%;
     display: block;
     align-items: center;
     justify-content: center;
     .title {
       text-align: center;
-      margin: 4rem 0;
+      margin: 2rem 0;
+      font-size: large;
     }
     .cart_detail_container {
       display: flex;
@@ -24,13 +25,26 @@
       button {
         margin: 1rem;
       }
+
       @media screen and (max-width: 768px) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        
+      }
+      @media screen and (max-width: 425px) {
         display: block;
         align-items: center;
         justify-content: center;
+        text-align: center;
+        button {
+          width: 80%;;
+        }
       }
     }
-    
+    .buy_finish {
+      width: 100%;
+    }
   }
   .cart_container_else {
     display: flex;
@@ -40,7 +54,7 @@
     width: 20rem;
     margin-top: 4rem;
     background-color: #51c4d3;
-    
+
     p {
       width: 80%;
       font-weight: 200;
