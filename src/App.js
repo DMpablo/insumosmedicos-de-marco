@@ -56,7 +56,7 @@ function App() {
         <Route path="/category">
         
           <CategoryContainer itemsFirebase={itemsFirebase} />
-          <h3>Elegi una categoria!🔍</h3>
+          <h3>Elegí una categoria!🔍</h3>
         </Route>
 
         <Route path="/contact" component={Footer} />

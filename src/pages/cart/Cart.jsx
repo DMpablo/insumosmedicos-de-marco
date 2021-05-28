@@ -54,31 +54,34 @@ const Cart = () => {
   return (
     <div className="container_if_else">
       {cart.length > 0 ? (
-        <div className="cart_container_if">
-          <div >
+        <div className="cart_container_if row">
+          <div className="container_cart col s12 m6">
             <h5 className="title">Descripcion del carrito 🛒</h5>
-          </div>
-          {cart.map((e, index) => (
-            <div key={index} className="cart_detail_container">
-              <CartDetail
-                title={e.title}
-                imageId={e.imageId}
-                price={e.price}
-                item={e}
-                stock={e.stock}
-              />
+            {cart.map((e, index) => (
+              <div key={index} className="cart_detail_container">
+                <CartDetail
+                  title={e.title}
+                  imageId={e.imageId}
+                  price={e.price}
+                  item={e}
+                  stock={e.stock}
+                />
+              </div>
+            ))}
+            <div className="cart_buttons row">
+              <b className='col s12 m6'>Total: {cartTotal}</b>
+              <button className="btn clear_cart col s12 m6" onClick={clearCart}>
+                vaciar carrito ✖
+              </button>
             </div>
-          ))}
-          <div className="cart_buttons">
-            <b>Total: {cartTotal}</b>
-            <button className="btn" onClick={clearCart}>
-              vaciar carrito ❎
+          </div>
+
+          <div className="container_form col s12 m6">
+            <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
+            <button className="btn buy_finish" onClick={handleFinsh}>
+              Finalizar la compra 👌
             </button>
           </div>
-          <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
-          <button className="btn buy_finish" onClick={handleFinsh}>
-            Finalizar la compra 👌
-          </button>
         </div>
       ) : (
         <div className="cart_container_else">
