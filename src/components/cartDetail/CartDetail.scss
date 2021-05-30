@@ -1,35 +1,30 @@
 .cart_detail {
+  width: 100%;
   display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60%;
+
   @media screen and (max-width: 768px) {
-    display: block;
     width: 80%;
   }
   img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     height: 5rem;
-   
+    margin: 3rem 0;
     @media screen and (max-width: 768px) {
-        height: 50%;
-       width: 50%;
-       
-      }
+      height: 50px;
+      width: 50px;
+    }
   }
   .detail_title {
     width: 10rem;
-    margin: 2rem;
-    @media screen and (max-width: 768px) {
-        width: 80%;
-    }
 
+    @media screen and (max-width: 768px) {
+      width: 80%;
+    }
   }
   .detail_price_button {
     display: block;
-
-    .detail_price {
-      margin: 2rem;
-    }
   }
 }
 .cart_detail:hover {

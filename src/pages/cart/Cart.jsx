@@ -37,10 +37,8 @@ const Cart = () => {
       `Gracias por tu compra!! 
       descripcion de tu compra: ${infoCart[0].title}, cantidad: ${infoCart[0].quantity}, ${infoCart[0].price}, total: ${cartTotal} `
     );
-    console.log(orderId);
     clearCart();
   };
-
   const handleFinsh = () => {
     const db = getFirestore();
     const batch = db.batch();
@@ -50,7 +48,6 @@ const Cart = () => {
       buyOrder();
     });
   };
-
   return (
     <div className="container_if_else">
       {cart.length > 0 ? (
@@ -68,9 +65,9 @@ const Cart = () => {
                 />
               </div>
             ))}
-            <div className="cart_buttons row">
-              <b className='col s12 m6'>Total: {cartTotal}</b>
-              <button className="btn clear_cart col s12 m6" onClick={clearCart}>
+            <div className="cart_buttons ">
+             
+              <button className="btn clear_cart " onClick={clearCart}>
                 vaciar carrito ✖
               </button>
             </div>
@@ -78,18 +75,29 @@ const Cart = () => {
 
           <div className="container_form col s12 m6">
             <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
+            <b >Total: {cartTotal}</b>
             <button className="btn buy_finish" onClick={handleFinsh}>
               Finalizar la compra 👌
             </button>
           </div>
         </div>
       ) : (
-        <div className="cart_container_else">
-          <p>
-            <strong>Carrito vacio!</strong>
-            <br />
-            Cuando agregues algo va a estar en este sitio 🛒
-          </p>
+        <div>
+          {orderId.length > 0 ? (
+            <div>
+              <h4>Gracias por su compra!</h4>
+              <p>Detalle de su orden</p>
+              <p>Orden ID: {orderId}</p>
+            </div>
+          ) : (
+            <div className="cart_container_else">
+              <p>
+                <strong>Carrito vacio!</strong>
+                <br />
+                Cuando agregues algo va a estar en este sitio 🛒
+              </p>
+            </div>
+          )}
         </div>
       )}
     </div>

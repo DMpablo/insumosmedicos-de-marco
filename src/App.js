@@ -47,16 +47,19 @@ function App() {
         <Route path="/itemDetailContainer/:catName/:id">
           <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemDetailContainer itemsFirebase={itemsFirebase} />
+          <Route component={Footer} />
         </Route>
         <Route path="/category/:catName">
           <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemList itemsFirebase={itemsFirebase} />
+          <Route component={Footer} />
         </Route>
         <Route path="/cart" component={Cart} />
+
         <Route path="/category">
-        
           <CategoryContainer itemsFirebase={itemsFirebase} />
           <h3>Elegí una categoria!🔍</h3>
+          <Route component={Footer} />
         </Route>
 
         <Route path="/contact" component={Footer} />
