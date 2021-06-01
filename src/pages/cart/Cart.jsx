@@ -4,13 +4,19 @@ import { CartContext } from "../../context/cartContext";
 import CartDetail from "../../components/cartDetail/CartDetail";
 import { getFirestore } from "../../firebase";
 import Form from "../../components/form/Form";
+
+
 const Cart = () => {
   const { cart, clearCart, cartTotal } = useContext(CartContext);
+  
   const [dataBuyer, setDataBuyer] = useState({
     name: "",
     phone: 0,
     email: "",
+    email2: "",
   });
+  console.log(dataBuyer.email === dataBuyer.email2 && dataBuyer.email !== "");
+
   const [orderId, setOrderId] = useState("");
 
   const infoCart = cart.map((e) => ({
@@ -40,13 +46,17 @@ const Cart = () => {
     clearCart();
   };
   const handleFinsh = () => {
-    const db = getFirestore();
-    const batch = db.batch();
-    cart.forEach((item) => {
-      const itemRef = db.collection("items").doc(item.id);
-      batch.update(itemRef, { stock: item.stock - item.units });
-      buyOrder();
-    });
+    if (dataBuyer.email === dataBuyer.email2) {
+      const db = getFirestore();
+      const batch = db.batch();
+      cart.forEach((item) => {
+        const itemRef = db.collection("items").doc(item.id);
+        batch.update(itemRef, { stock: item.stock - item.units });
+        buyOrder();
+      });
+    }else{
+      alert("email no coinside");
+    }
   };
   return (
     <div className="container_if_else">
@@ -66,7 +76,6 @@ const Cart = () => {
               </div>
             ))}
             <div className="cart_buttons ">
-             
               <button className="btn clear_cart " onClick={clearCart}>
                 vaciar carrito ✖
               </button>
@@ -75,7 +84,7 @@ const Cart = () => {
 
           <div className="container_form col s12 m6">
             <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
-            <b >Total: {cartTotal}</b>
+            <b>Total: {cartTotal}</b>
             <button className="btn buy_finish" onClick={handleFinsh}>
               Finalizar la compra 👌
             </button>

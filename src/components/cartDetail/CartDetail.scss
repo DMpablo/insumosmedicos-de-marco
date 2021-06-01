@@ -1,19 +1,18 @@
 .cart_detail {
-  width: 100%;
   display: flex;
 
-  @media screen and (max-width: 768px) {
-    width: 80%;
-  }
-  img {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 5rem;
-    margin: 3rem 0;
-    @media screen and (max-width: 768px) {
-      height: 50px;
-      width: 50px;
+  .container_img{
+    margin-right: 12px;
+    img {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 5rem;
+      margin: 3rem 0;
+      @media screen and (max-width: 768px) {
+        height: 50px;
+        width: 50px;
+      }
     }
   }
   .detail_title {

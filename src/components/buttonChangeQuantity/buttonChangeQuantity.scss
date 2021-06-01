@@ -3,19 +3,18 @@
   .container_button_change {
     width: 100%;
     display: flex;
-    align-items: center;
-    justify-content: center;
+    
+
     .btn {
       display: flex;
       align-items: center;
       justify-content: center;
-      margin: 1rem 0;
+      margin: 8px 4px;
       width: 2rem;
       height: 2rem;
     }
     p {
-      width: 20px;
-      margin: 1rem;
+      margin: auto;
     }
   }
   .btn_add {
