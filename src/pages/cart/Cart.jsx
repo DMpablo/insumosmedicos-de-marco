@@ -5,17 +5,15 @@ import CartDetail from "../../components/cartDetail/CartDetail";
 import { getFirestore } from "../../firebase";
 import Form from "../../components/form/Form";
 
-
 const Cart = () => {
   const { cart, clearCart, cartTotal } = useContext(CartContext);
-  
+
   const [dataBuyer, setDataBuyer] = useState({
     name: "",
     phone: 0,
     email: "",
     email2: "",
   });
-  console.log(dataBuyer.email === dataBuyer.email2 && dataBuyer.email !== "");
 
   const [orderId, setOrderId] = useState("");
 
@@ -40,23 +38,37 @@ const Cart = () => {
       })
       .catch((error) => error);
     alert(
-      `Gracias por tu compra!! 
-      descripcion de tu compra: ${infoCart[0].title}, cantidad: ${infoCart[0].quantity}, ${infoCart[0].price}, total: ${cartTotal} `
+      `Gracias por tu compra, ${dataBuyer.name}!!  \n
+      descripcion de tu compra: ${infoCart[0].title}, \n
+      cantidad: ${infoCart[0].quantity}, \n
+      ${infoCart[0].price},\n 
+      total: ${cartTotal} `
     );
     clearCart();
   };
-  const handleFinsh = () => {
-    if (dataBuyer.email === dataBuyer.email2) {
-      const db = getFirestore();
-      const batch = db.batch();
-      cart.forEach((item) => {
-        const itemRef = db.collection("items").doc(item.id);
-        batch.update(itemRef, { stock: item.stock - item.units });
-        buyOrder();
-      });
-    }else{
-      alert("email no coinside");
+
+  const formValidation = () => {
+    if (dataBuyer.email !== dataBuyer.email2) {
+      alert("👮‍♀️📢 : email no coinside 😒✉");
+    } else if (
+      dataBuyer.email === "" ||
+      dataBuyer.name === "" ||
+      dataBuyer.phone === ""
+    ) {
+      alert("👮‍♀️📢 : tenes casilleros sin completar");
+    } else {
+      handleFinsh();
     }
+  };
+
+  const handleFinsh = () => {
+    const db = getFirestore();
+    const batch = db.batch();
+    cart.forEach((item) => {
+      const itemRef = db.collection("items").doc(item.id);
+      batch.update(itemRef, { stock: item.stock - item.units });
+      buyOrder();
+    });
   };
   return (
     <div className="container_if_else">
@@ -85,7 +97,7 @@ const Cart = () => {
           <div className="container_form col s12 m6">
             <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
             <b>Total: {cartTotal}</b>
-            <button className="btn buy_finish" onClick={handleFinsh}>
+            <button className="btn buy_finish" onClick={formValidation}>
               Finalizar la compra 👌
             </button>
           </div>
@@ -94,7 +106,7 @@ const Cart = () => {
         <div>
           {orderId.length > 0 ? (
             <div>
-              <h4>Gracias por su compra!</h4>
+              <h4>{dataBuyer.name}, Gracias por su compra!</h4>
               <p>Detalle de su orden</p>
               <p>Orden ID: {orderId}</p>
             </div>
