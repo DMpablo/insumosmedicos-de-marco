@@ -1,5 +1,5 @@
 import "./Cart.scss";
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import { CartContext } from "../../context/cartContext";
 import CartDetail from "../../components/cartDetail/CartDetail";
 import { getFirestore } from "../../firebase";
@@ -38,28 +38,38 @@ const Cart = () => {
       })
       .catch((error) => error);
     alert(
-      `Gracias por tu compra, ${dataBuyer.name}!!  \n
-      descripcion de tu compra: ${infoCart[0].title}, \n
-      cantidad: ${infoCart[0].quantity}, \n
-      ${infoCart[0].price},\n 
-      total: ${cartTotal} `
+      `${
+        dataBuyer.name
+      }, gracias por tu compra !!\n\nDescripcion de tu orden:\n${infoCart.map(
+        (e) => `${e.quantity} ${e.title}, ($${e.price} x unidad)\n`
+      )}
+      total: $ ${cartTotal}`
     );
     clearCart();
   };
 
-  const formValidation = () => {
-    if (dataBuyer.email !== dataBuyer.email2) {
-      alert("👮‍♀️📢 : email no coinside 😒✉");
-    } else if (
-      dataBuyer.email === "" ||
-      dataBuyer.name === "" ||
-      dataBuyer.phone === ""
-    ) {
-      alert("👮‍♀️📢 : tenes casilleros sin completar");
-    } else {
-      handleFinsh();
-    }
-  };
+  const [msjForm, setMsjForm] = useState("");
+
+  useEffect(() => {
+    const formValidation = () => {
+      if (dataBuyer.email !== dataBuyer.email2) {
+        setMsjForm("👮‍♀️📢 : email no coinside 😒✉");
+      } else if (
+        dataBuyer.email === "" ||
+        dataBuyer.name === "" ||
+        dataBuyer.phone === ""
+      ) {
+        setMsjForm("👮‍♀️📢 : tenes casilleros sin completar");
+      } else {
+        setMsjForm(
+          <button className="btn buy_finish" onClick={handleFinsh}>
+            Finalizar la compra 👌
+          </button>
+        );
+      }
+    };
+    formValidation();
+  }, [dataBuyer]);
 
   const handleFinsh = () => {
     const db = getFirestore();
@@ -70,6 +80,7 @@ const Cart = () => {
       buyOrder();
     });
   };
+
   return (
     <div className="container_if_else">
       {cart.length > 0 ? (
@@ -97,9 +108,7 @@ const Cart = () => {
           <div className="container_form col s12 m6">
             <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
             <b>Total: {cartTotal}</b>
-            <button className="btn buy_finish" onClick={formValidation}>
-              Finalizar la compra 👌
-            </button>
+            <p>{msjForm}</p>
           </div>
         </div>
       ) : (

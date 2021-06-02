@@ -4,7 +4,7 @@ import { CartContext } from "../../context/cartContext";
 
 export const ButtonChangeQuantity = ({ item }) => {
   const { removeFromCart, restUnit, addUnit } = useContext(CartContext);
- 
+
   return (
     <div className="container-carrito">
       <div className="container_button_change">
@@ -12,11 +12,11 @@ export const ButtonChangeQuantity = ({ item }) => {
           +
         </button>
         <p>{item.units}</p>
-        <button className="btn" onClick={()=> restUnit(item)}>
-        -
+        <button className="btn" onClick={() => restUnit(item)}>
+          -
         </button>
         <button className="btn" onClick={() => removeFromCart(item.id)}>
-          ❌
+          ✖
         </button>
       </div>
     </div>

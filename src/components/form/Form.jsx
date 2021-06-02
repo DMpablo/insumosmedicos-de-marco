@@ -18,7 +18,7 @@ function Form({ dataBuyer, setDataBuyer }) {
 
   return (
     <Fragment>
-      <h2 className="title_form">Carga los datos para finalizar tu orden!</h2>
+      <h2 className="title_form">Carga tus datos para finalizar la compra!</h2>
       <form>
         {formId.map((e) => (
           <div key={e.id}>
