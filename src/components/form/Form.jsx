@@ -24,7 +24,7 @@ function Form({ dataBuyer, setDataBuyer }) {
           <div key={e.id}>
             <label htmlFor={e.id}>
               {e.id}:
-              <input
+              <input 
                 id={e.id}
                 type={e.type}
                 onChange={({ target }) => handleForm(e.id, target.value)}

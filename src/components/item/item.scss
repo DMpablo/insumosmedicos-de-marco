@@ -6,13 +6,14 @@ $size1: 1rem;
 
 .product-card {
   margin: 4rem;
-
   .card {
-    border-radius: 8px;
     display: flex;
     align-items: center;
     justify-content: center;
-
+    border-radius: 8px;
+    padding: 2rem;
+    transition: transform 0.1s linear 0.3s;
+    transition: box-shadow 0.1s linear 0.1s;
     @media screen and (max-width: 768px) {
       display: block;
     }
@@ -20,7 +21,6 @@ $size1: 1rem;
     .card-image {
       img {
         border-radius: 4px;
-        
         height: 10rem;
         width: 10rem;
         @media screen and (max-width: 768px) {
@@ -43,4 +43,8 @@ $size1: 1rem;
       width: 100%;
     }
   }
+}
+.card:hover{
+  box-shadow: -10px 10px 0px $color3 ;
+  transform: translateY(-10px);
 }

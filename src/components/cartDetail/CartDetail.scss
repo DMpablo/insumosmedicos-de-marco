@@ -1,7 +1,10 @@
 .cart_detail {
   display: flex;
+  background-color: #fafafa;
+  transition: transform 0.1s linear 0.3s;
+  transition: box-shadow 0.1s linear 0.1s;
 
-  .container_img{
+  .container_img {
     margin-right: 12px;
     img {
       display: flex;
@@ -27,5 +30,6 @@
   }
 }
 .cart_detail:hover {
-  box-shadow: rgba(0, 0, 0, 0.541) 0 0 5px;
+  box-shadow: -5px 5px 0px #126e82;
+  transform: translateY(-10px);
 }

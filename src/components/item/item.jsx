@@ -15,7 +15,7 @@ export const Item = ({ newCat }) => {
         </div>
         <div className="card-content">
           <span className="card-title">{newCat.title}</span>
-          <p>{newCat.price}</p>
+          <b>$ {newCat.price}</b>
         </div>
         {cart.find((e) => e.id === newCat.id) ? (
           <Link to="/cart">
