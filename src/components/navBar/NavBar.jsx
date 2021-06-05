@@ -20,16 +20,9 @@ export const NavBar = ({ quantity }) => {
       </ul>
 
       <Link to="/cart">
-        <div className="container-avatar">
+        <div className="container-quantity">
           <img className="carrito-svg" src={carrito} alt="svg-carrito" />
           <ItemCount quantity={quantity} />
-
-          <p>|</p>
-          {/*       <img
-          className="img-avatar"
-          src="https://via.placeholder.com/200x200/92d19a/ffffff"
-          alt="img-avatar"
-        /> */}
         </div>
       </Link>
     </nav>

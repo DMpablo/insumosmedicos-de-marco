@@ -1,10 +1,12 @@
+
 import "./containerGreeting.scss";
-export const ContainerGreeting = (props) => {
+export const ContainerGreeting = () => {
   return (
     <div className="container-greeting">
       <h1 className="insumos">
-        {props.name[0]} <span className="medicos">{props.name[1]}</span>
+        insumos <span className="medicos"> medicos</span>
       </h1>
+       
     </div>
   );
 };

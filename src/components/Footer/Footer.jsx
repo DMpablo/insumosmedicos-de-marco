@@ -10,7 +10,7 @@ const Footer = () => {
           <p>Aca van a estar los datos de contacto</p>
         <ul>
           <li>
-            <Link to="/">volver al home </Link>
+            <Link to="/">Home </Link>
           </li>
           <p>|</p>
           <li>

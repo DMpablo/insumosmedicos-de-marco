@@ -18,11 +18,13 @@ footer{
         margin: 2rem;
     }
     ul{
-       
         display: flex;
         align-items: center;
         justify-content: center;
-        color: $color1;
-       
+        
+       li a{
+           text-decoration: none;
+           color: $color1;
+       }
     }
 }

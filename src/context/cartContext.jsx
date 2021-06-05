@@ -15,8 +15,10 @@ export const CartProvider = ({ children }) => {
     if (item.stock > item.units) {
       newCart[newCart.findIndex((prod) => prod.id === item.id)].units += 1;
       setCart(newCart);
-    }else{
-      alert(`No tenemos mas cantidad de ${item.title}, stock actual es: ${item.stock}`)
+    } else {
+      alert(
+        `No tenemos mas cantidad de ${item.title}, stock actual es: ${item.stock}`
+      );
     }
   };
 
@@ -45,7 +47,9 @@ export const CartProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    setQuantity(cart.length);
+    let newQuantity = 0
+    let sumQuantity = cart.map((e) => newQuantity += e.units);
+    setQuantity(newQuantity);
   }, [cart]);
 
   return (

@@ -16,7 +16,7 @@ $size1: 1rem;
     margin-left: 2%;
     font-size: $size1;
     font-weight: 200;
-    width: 20%;
+    width: auto;
     strong {
       font-size: $size1;
       font-weight: 600;
@@ -26,27 +26,23 @@ $size1: 1rem;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 0 0 -10%;
+    margin-left: -2%;
     li {
       font-size: 2rem;
       font-weight: 200;
       
     }
   }
-  .container-avatar {
+  .container-quantity {
     display: flex;
     align-items: center;
     justify-content: center;
     .carrito-svg {
+      border-color: 2px $color1 ;
       height: 2rem;
     }
     .quantity_product{
       margin: 0 12px;
-    }
-
-    .img-avatar {
-      margin: 0 8px 0 12px;
-      height: 60px;
     }
   }
 }

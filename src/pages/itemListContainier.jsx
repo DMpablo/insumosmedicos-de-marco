@@ -1,17 +1,11 @@
 import { ContainerGreeting } from "../components/containerGreeting/containerGreeting";
-import CategoryContainer from "./CategoryContainer"; 
-
+import CategoryContainer from "../pages/CategoryContainer";
 
 export const ItemListContainer = () => {
-  const GREETING = ["insumos", "medicos"];
   return (
     <div className="item_list_container">
-      <div>
-        <ContainerGreeting name={GREETING} />
-      </div>
-      <div className="row">
-        <CategoryContainer path="/category"/>
-      </div>
+      <ContainerGreeting />
+      <CategoryContainer path="/category" />
     </div>
   );
 };
