@@ -12,7 +12,7 @@ export const ItemDetail = ({ ItemID, onAdd }) => {
       </div>
       <div className="item_detail">
         <p className="title_detail">{ItemID.title}</p>
-        <p className="title_detail">{ItemID.description}</p>
+        <p className="description_detail">{ItemID.description}</p>
         <p className="price_detail">$ {ItemID.price}</p>
         <div className="function_buttons">
           {cart.find((e) => e.id === ItemID.id) ? (

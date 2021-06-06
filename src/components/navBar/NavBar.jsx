@@ -5,7 +5,7 @@ import { ItemCount } from "../ItemCount/ItemCount";
 export const NavBar = ({ quantity }) => {
   return (
     <nav className="navBar">
-      <Link className="nombre_logo" to="/">
+      <Link className="nombre_logo" to="/insumosmedicos-de-marco">
         i<strong> m</strong>{" "}
       </Link>
 

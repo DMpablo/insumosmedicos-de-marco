@@ -1,15 +1,16 @@
 import { ItemDetailContainer } from "./pages/itemDetailContainer";
-import { BrowserRouter, Switch, Route } from "react-router-dom";
-import { ItemListContainer } from "./pages/itemListContainier";
 import CategoryContainer from "./pages/CategoryContainer";
+import { ContainerGreeting } from "./components/containerGreeting/containerGreeting";
 import { ItemList } from "./components/itemList/itemList";
 import { NavBar } from "./components/navBar/NavBar.jsx";
 import { CartContext } from "./context/cartContext";
 import Footer from "./components/Footer/Footer";
-import Cart from "./pages/cart/Cart.jsx";
-import { useContext, useEffect, useState } from "react";
 import "./app.scss";
+import Cart from "./pages/cart/Cart.jsx";
+import { PagesUndefined } from "./components/pagesUndefined/PagesUndefined";
 import { getFirestore } from "./firebase/index";
+import { BrowserRouter, Switch, Route } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
 
 function App() {
   const [itemsFirebase, setItemsFirebase] = useState([]);
@@ -49,11 +50,13 @@ function App() {
           <ItemDetailContainer itemsFirebase={itemsFirebase} />
           <Route component={Footer} />
         </Route>
+
         <Route path="/category/:catName">
           <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemList itemsFirebase={itemsFirebase} />
           <Route component={Footer} />
         </Route>
+
         <Route path="/cart" component={Cart} />
 
         <Route path="/category">
@@ -62,8 +65,11 @@ function App() {
           <Route component={Footer} />
         </Route>
 
-        <Route path="/contact" component={Footer} />
-        <Route exact path="/" component={ItemListContainer} />
+        <Route exact path="/insumosmedicos-de-marco">
+          <ContainerGreeting />
+          <CategoryContainer itemsFirebase={itemsFirebase} />
+        </Route>
+        <Route component={PagesUndefined} />
       </Switch>
     </BrowserRouter>
   );
