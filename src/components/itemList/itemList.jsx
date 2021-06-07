@@ -8,11 +8,13 @@ export const ItemList = ({ itemsFirebase }) => {
   const newCat = itemsFirebase.filter((i) => i.category === catName);
 
   return (
-    <div  className="item_list">
+    <div className="container_item_list">
       {newCat === undefined ? (
-        <p>Cargando datos</p>
+        <h4 className="cargando-datos">Cargando datos</h4>
       ) : (
-        newCat.map((e, index) => <Item key={index} newCat={e} />)
+        <div className="container-items">
+          {newCat.map((e, index) => <Item key={index} newCat={e} />)}
+        </div>
       )}
     </div>
   );

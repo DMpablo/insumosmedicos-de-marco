@@ -22,27 +22,37 @@ $size1: 1rem;
       font-weight: 600;
     }
   }
-  #nav-mobile {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-left: -2%;
-    li {
-      font-size: 2rem;
-      font-weight: 200;
-      
+  .display{
+   
+    @media screen and (max-width: 425px) {
+      display: none;
     }
   }
+
   .container-quantity {
     display: flex;
     align-items: center;
     justify-content: center;
+   svg{
+    fill:rgba(255, 255, 255, 1);
+   }
     .carrito-svg {
-      border-color: 2px $color1 ;
+      border-color: 2px $color1;
       height: 2rem;
     }
-    .quantity_product{
+    .quantity_product {
       margin: 0 12px;
     }
   }
+  
 }
+.display-hidden{
+      background-color: $color4;
+      display: none;
+    
+      @media screen and (max-width: 425px) {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      }
+  }

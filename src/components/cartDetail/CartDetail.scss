@@ -3,6 +3,8 @@
   background-color: #fafafa;
   transition: transform 0.1s linear 0.3s;
   transition: box-shadow 0.1s linear 0.1s;
+  border-radius: 20px;
+  width: 20rem;
 
   .container_img {
     margin-right: 12px;
@@ -28,6 +30,12 @@
   .detail_price_button {
     display: block;
   }
+  .stock{
+    color: gray;
+    margin: 0;
+  }
+
+
 }
 .cart_detail:hover {
   box-shadow: -5px 5px 0px #126e82;

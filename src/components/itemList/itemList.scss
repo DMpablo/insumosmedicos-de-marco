@@ -1,4 +1,13 @@
-.sub_title {
-  text-align: center;
-  margin: 4rem;
+.container_item_list{
+
+  .cargando-datos {
+    text-align: center;
+    font-size: large;
+  }
+  .container-items{
+      margin: 2rem 4rem;   
+      @media screen and (max-width: 768px) {
+        margin: 2rem 2rem;
+      }
+  }
 }

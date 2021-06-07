@@ -1,4 +1,3 @@
-
 import "./containerGreeting.scss";
 export const ContainerGreeting = () => {
   return (
@@ -6,7 +5,6 @@ export const ContainerGreeting = () => {
       <h1 className="insumos">
         insumos <span className="medicos"> medicos</span>
       </h1>
-       
     </div>
   );
 };

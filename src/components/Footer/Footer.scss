@@ -5,12 +5,23 @@ $color4: #132c33;
 
 
 footer{
-    background-color: $color4;
+    background: linear-gradient(
+        90deg,
+        rgba(19, 44, 51, 1) 0%,
+        rgba(18, 110, 130, 1) 100%
+      );
+    
     padding: 2rem;
-    margin: 4rem 0 0 0;
+    width: 100%;
+   
     .footer_title{
         color: $color1;
         margin: 2rem;
+    }
+    .container_map{
+        display: flex;
+        align-items: center;
+        justify-content: center;
     }
     p{
         text-align: center;

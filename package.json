@@ -2,7 +2,7 @@
   "name": "insumosmed-de-marco",
   "version": "0.1.0",
   "private": true,
-  "homepage":"http://DMpablo.github.io/insumosmedicos-de-marco",
+  "homepage": "http://DMpablo.github.io/insumosmedicos-de-marco",
   "dependencies": {
     "cra-template": "1.1.2",
     "firebase": "^8.6.1",
@@ -14,9 +14,9 @@
     "react-scripts": "4.0.3",
     "sass": "^1.32.8"
   },
-    "scripts": {
-    "predeploy":"npm run build",
-    "deploy":"gh-pages -d build",
+  "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",

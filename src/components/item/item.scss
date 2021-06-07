@@ -5,15 +5,19 @@ $color4: #132c33;
 $size1: 1rem;
 
 .product-card {
-  margin: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
   .card {
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 8px;
-    padding: 2rem;
+    padding: 4px;
     transition: transform 0.1s linear 0.3s;
     transition: box-shadow 0.1s linear 0.1s;
+    width: 80rem;
     @media screen and (max-width: 768px) {
       display: block;
     }
@@ -39,12 +43,17 @@ $size1: 1rem;
         margin: 0 1rem;
       }
     }
-    button {
-      width: 100%;
+    .card-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      button {
+        width: 100%;
+      }
     }
   }
 }
-.card:hover{
-  box-shadow: -10px 10px 0px $color3 ;
+.card:hover {
+  box-shadow: -10px 10px 0px $color3;
   transform: translateY(-10px);
 }

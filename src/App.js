@@ -1,9 +1,9 @@
 import { ItemDetailContainer } from "./pages/itemDetailContainer";
-import CategoryContainer from "./pages/CategoryContainer";
 import { ContainerGreeting } from "./components/containerGreeting/containerGreeting";
 import { ItemList } from "./components/itemList/itemList";
 import { NavBar } from "./components/navBar/NavBar.jsx";
 import { CartContext } from "./context/cartContext";
+import "../node_modules/materialize-css/dist/css/materialize.min.css";
 import Footer from "./components/Footer/Footer";
 import "./app.scss";
 import Cart from "./pages/cart/Cart.jsx";
@@ -43,34 +43,28 @@ function App() {
 
   return (
     <BrowserRouter>
-      <NavBar quantity={quantity} />
+      <NavBar quantity={quantity} itemsFirebase={itemsFirebase} />
       <Switch>
         <Route path="/itemDetailContainer/:catName/:id">
-          <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemDetailContainer itemsFirebase={itemsFirebase} />
-          <Route component={Footer} />
         </Route>
 
         <Route path="/category/:catName">
-          <CategoryContainer itemsFirebase={itemsFirebase} />
           <ItemList itemsFirebase={itemsFirebase} />
-          <Route component={Footer} />
         </Route>
 
         <Route path="/cart" component={Cart} />
 
         <Route path="/category">
-          <CategoryContainer itemsFirebase={itemsFirebase} />
           <h3>Elegí una categoria!🔍</h3>
-          <Route component={Footer} />
         </Route>
 
         <Route exact path="/insumosmedicos-de-marco">
           <ContainerGreeting />
-          <CategoryContainer itemsFirebase={itemsFirebase} />
         </Route>
         <Route component={PagesUndefined} />
       </Switch>
+      <Footer />
     </BrowserRouter>
   );
 }
