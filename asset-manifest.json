@@ -1,8 +1,8 @@
 {
   "files": {
-    "main.css": "/insumosmedicos-de-marco/static/css/main.9c5ebf30.chunk.css",
-    "main.js": "/insumosmedicos-de-marco/static/js/main.1e5e054a.chunk.js",
-    "main.js.map": "/insumosmedicos-de-marco/static/js/main.1e5e054a.chunk.js.map",
+    "main.css": "/insumosmedicos-de-marco/static/css/main.2a1af116.chunk.css",
+    "main.js": "/insumosmedicos-de-marco/static/js/main.9adb7dc2.chunk.js",
+    "main.js.map": "/insumosmedicos-de-marco/static/js/main.9adb7dc2.chunk.js.map",
     "runtime-main.js": "/insumosmedicos-de-marco/static/js/runtime-main.b25a5278.js",
     "runtime-main.js.map": "/insumosmedicos-de-marco/static/js/runtime-main.b25a5278.js.map",
     "static/css/2.95ff951f.chunk.css": "/insumosmedicos-de-marco/static/css/2.95ff951f.chunk.css",
@@ -10,14 +10,14 @@
     "static/js/2.c83d94e5.chunk.js.map": "/insumosmedicos-de-marco/static/js/2.c83d94e5.chunk.js.map",
     "index.html": "/insumosmedicos-de-marco/index.html",
     "static/css/2.95ff951f.chunk.css.map": "/insumosmedicos-de-marco/static/css/2.95ff951f.chunk.css.map",
-    "static/css/main.9c5ebf30.chunk.css.map": "/insumosmedicos-de-marco/static/css/main.9c5ebf30.chunk.css.map",
+    "static/css/main.2a1af116.chunk.css.map": "/insumosmedicos-de-marco/static/css/main.2a1af116.chunk.css.map",
     "static/js/2.c83d94e5.chunk.js.LICENSE.txt": "/insumosmedicos-de-marco/static/js/2.c83d94e5.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.b25a5278.js",
     "static/css/2.95ff951f.chunk.css",
     "static/js/2.c83d94e5.chunk.js",
-    "static/css/main.9c5ebf30.chunk.css",
-    "static/js/main.1e5e054a.chunk.js"
+    "static/css/main.2a1af116.chunk.css",
+    "static/js/main.9adb7dc2.chunk.js"
   ]
 }
