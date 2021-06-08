@@ -34,7 +34,9 @@ const CartIfElse = ({ dataBuyer, setDataBuyer, msjForm, orderId }) => {
           <div className="container_form col s12 m6">
             <Form dataBuyer={dataBuyer} setDataBuyer={setDataBuyer} />
             <b>Total: {cartTotal}</b>
-            <p>{msjForm}</p>
+            <div className="container-msj-form">
+              <p className="msj-form">{msjForm}</p>
+            </div>
           </div>
         </div>
       ) : (

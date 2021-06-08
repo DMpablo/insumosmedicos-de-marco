@@ -2,7 +2,7 @@ import React from "react";
 import "./Footer.scss";
 import { Link } from "react-router-dom";
 
-const Footer = () => {
+const Footer = ({quantity}) => {
 
   return (
     <footer className="footer_container">
@@ -26,7 +26,7 @@ const Footer = () => {
         </li>
         <p>|</p>
         <li>
-          <Link to="/cart">carrito 🛒</Link>
+          <Link to="/cart">carrito 🛒 {quantity}</Link>
         </li>
       </ul>
     </footer>

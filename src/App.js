@@ -12,6 +12,7 @@ import { getFirestore } from "./firebase/index";
 import { BrowserRouter, Switch, Route } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 
+
 function App() {
   const [itemsFirebase, setItemsFirebase] = useState([]);
   useEffect(() => {
@@ -43,6 +44,8 @@ function App() {
 
   return (
     <BrowserRouter>
+    
+  
       <NavBar quantity={quantity} itemsFirebase={itemsFirebase} />
       <Switch>
         <Route path="/itemDetailContainer/:catName/:id">
@@ -64,7 +67,7 @@ function App() {
         </Route>
         <Route component={PagesUndefined} />
       </Switch>
-      <Footer />
+      <Footer quantity={quantity}/>
     </BrowserRouter>
   );
 }

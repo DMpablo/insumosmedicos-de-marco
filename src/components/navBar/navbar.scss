@@ -2,7 +2,7 @@ $color1: #d8e3e7;
 $color2: #51c4d3;
 $color3: #126e82;
 $color4: #132c33;
-$size1: 1rem;
+$size1: 20px;
 
 .navBar {
   display: flex;
@@ -35,12 +35,11 @@ $size1: 1rem;
     justify-content: center;
    svg{
     fill:rgba(255, 255, 255, 1);
+    height: 20px;
    }
-    .carrito-svg {
-      border-color: 2px $color1;
-      height: 2rem;
-    }
+    
     .quantity_product {
+      font-size: 20px;
       margin: 0 12px;
     }
   }

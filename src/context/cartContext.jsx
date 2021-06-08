@@ -47,8 +47,8 @@ export const CartProvider = ({ children }) => {
   );
 
   useEffect(() => {
-    let newQuantity = 0
-    let sumQuantity = cart.map((e) => newQuantity += e.units);
+    let newQuantity = 0;
+    let sumQuantity = cart.map((e) => (newQuantity += e.units));
     setQuantity(newQuantity);
   }, [cart]);
 

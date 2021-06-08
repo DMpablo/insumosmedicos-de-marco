@@ -52,13 +52,13 @@ const Cart = () => {
   useEffect(() => {
     const formValidation = () => {
       if (dataBuyer.email !== dataBuyer.email2) {
-        setMsjForm("👮‍♀️ 📢 :  email no coinCide 😒 ✉");
+        setMsjForm("👮‍♀️ 📢 :  email no coincide 😒 ✉");
       } else if (
         dataBuyer.email === "" ||
         dataBuyer.name === "" ||
         dataBuyer.phone === ""
       ) {
-        setMsjForm("👮‍♀️ 📢 :  tenes casilleros sin completar");
+        setMsjForm("👮‍♀️ 📢 :  casilleros sin completar");
       } else {
         setMsjForm(
           <button className="btn buy_finish" onClick={handleFinsh}>

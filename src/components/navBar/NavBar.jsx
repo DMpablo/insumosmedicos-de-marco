@@ -6,6 +6,11 @@ import CategoryContainer from "../../pages/CategoryContainer";
 export const NavBar = ({ quantity, itemsFirebase }) => {
   return (
     <div>
+      { quantity >= 1 ? (
+      <title>insumos | medicos 🛒 ( {quantity} )</title>
+    ) : (
+      <title>insumos | medicos </title>
+    )}
       <nav className="navBar">
         <Link className="nombre_logo" to="/insumosmedicos-de-marco">
           i<strong> m</strong>
@@ -22,7 +27,7 @@ export const NavBar = ({ quantity, itemsFirebase }) => {
               width="24"
               height="24"
               viewBox="0 0 24 24"
-              >
+            >
               <path
                 fill="none"
                 d="M8.246 11L18.246 11 19.675 6 6.428 6z"
@@ -32,7 +37,6 @@ export const NavBar = ({ quantity, itemsFirebase }) => {
               <circle cx="16.5" cy="19.5" r="1.5"></circle>
             </svg>
             <p className="quantity_product">{quantity}</p>
-            
           </div>
         </Link>
       </nav>
