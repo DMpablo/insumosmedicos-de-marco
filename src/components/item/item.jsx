@@ -21,7 +21,7 @@ export const Item = ({ newCat }) => {
           {cart.find((e) => e.id === newCat.id) ? (
             <div className="card-button col m2 s12">
               <Link to="/cart">
-                <button className="btn btn_add">ver en carrito</button>
+                <button className="btn btn_add">en carrito</button>
               </Link>
             </div>
           ) : (
